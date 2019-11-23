@@ -1,0 +1,545 @@
+/* variables */
+:root {
+    --mainColor: rgb(241, 79, 79);
+}
+
+
+
+
+/* scrollbar change */
+
+::-webkit-scrollbar-track {
+    border-radius: 100px;
+    -webkit-box-shadow: inset 0 0 6px rgba(250, 248, 248, 0);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(255, 245, 245);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mainColor);
+    border-radius: 5px;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.cardImage {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+
+/* carousel css */
+/* .carousel {
+    margin: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 600px auto;
+}
+
+.carousel-indicators li.active {
+    background-color: rgb(241, 79, 79);
+}
+
+.carousel-control-prev i, .carousel-control-next i {
+    color: rgb(241, 79, 79);
+    font-size: 40px;
+} */
+
+
+/* navbar css */
+/* .navbar {
+    background: transparent !important;
+    transition: background-color 500ms;
+} */
+
+.navbar {
+    background: white !important;
+    transition: background-color 500ms;
+}
+
+.scroll {
+    background: rgb(241, 79, 79) !important;
+}
+
+.navbar .nav-item .nav-link {
+    color: rgb(241, 79, 79) !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+.navbar .nav-item .nav-link.change {
+    color: white !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
+
+.navbar-brand {
+    color: rgb(241, 79, 79) !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    transition: ease-in 500ms;
+}
+
+.navbar-brand.change {
+    color: white !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    transform: translateX(100px);
+    transition: transform ease-in 500ms;
+}
+
+.navbar-toggler.custom-toggler {
+    border-color: rgb(241, 79, 79);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(241, 79, 79)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.whiteToggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler.whiteToggler {
+    border-color: rgb(255, 255, 255);
+}
+
+
+
+/* header section */
+.aboutBG {
+    height: 70vh;
+    background-image: url('../assets/images/secondSection.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    /* filter: brightness(0.9); */
+}
+
+
+.headerSection{
+    height: 60vh;
+    width:100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin-top:50px;
+}
+
+.aboutLayer {
+    /* background-color: rgba(241, 79, 79, 0.4); */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* background-image: linear-gradient(rgba(255,0,0,0),rgba(255,79,79,.4)); */
+}
+
+.aboutHeaders {
+    top: 50%;
+    right:5%;
+    position: relative;
+    color: var(--mainColor);
+    font-style: bolder;
+}
+
+@media only screen and (max-width: 600px) {
+    .aboutHeaders {
+      background: rgba(255, 255, 255,0.6);
+    }
+  }
+
+
+
+
+
+
+/* 3d swiper css */
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide.nearbySwiper {
+    width: 300px;
+    height: auto;
+    background: rgb(252, 250, 250);
+    box-shadow: 10px 8px 16px 0px #888888;
+}
+
+.swiper-slide .imgBox img {
+    width: 100%;
+    height: 250px;
+    object-fit: fill;
+    transition: transform ease 200ms;
+}
+
+.swiper-slide .imgBox {
+    overflow: hidden;
+}
+
+.nearbyDescription {
+    padding: 20px;
+}
+
+.swiper-slide.nearbySwiper.swiper-slide-active .imgBox:hover img {
+    transform: scale(1.5);
+}
+
+
+.footerBottom {
+    background: rgb(252, 250, 250);
+    color: rgb(10, 10, 10);
+    padding: 10px;
+}
+
+.footerTop {
+    background: rgb(235, 66, 66);
+    color: white;
+}
+
+.footerTop a {
+    color: white;
+    text-decoration: none;
+    transition: font 300ms;
+}
+
+.footerTop a:hover {
+    font-size: 15px;
+}
+
+/* login Page Customization */
+
+.loginSliderPanel {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.loginWrapper {
+    overflow: hidden;
+}
+
+.loginPanel {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+}
+
+.loginswiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.loginimgBox {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.loginimgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sliderOverlay {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-20px);
+    z-index: 100;
+}
+
+.upperOverlay, .lowerOverlay {
+    height: 50%;
+    background: white;
+    width: 100%;
+}
+
+.upperOverlay {
+    transform-origin: 100% 100%;
+    transform: skewY(45deg);
+}
+
+.lowerOverlay {
+    transform-origin: 100% 100%;
+    transform: skewY(-45deg);
+}
+
+.loginSlide1 {
+    background: url("/assets/images/biryani.jpg");
+}
+
+.loginSlide2 {
+    background: url("/assets/images/pizza.jpg");
+}
+
+.loginSlide3 {
+    background: url("/assets/images/masala.jpg");
+}
+
+.loginSlide1, .loginSlide2, .loginSlide3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.loginSlideInner {
+    background: linear-gradient(-90deg, rgba(241, 79, 79, 0.7), transparent, transparent);
+    width: 100%;
+    height: 100%;
+}
+
+.loginSlideText {
+    top: 40%;
+    position: relative;
+    color: white;
+    padding: 30px;
+    text-align: right;
+}
+
+.loginSlide3 .loginSlideText h1 {
+    font-size: 5vw;
+    transform: translateX(-20%);
+}
+
+/* login panel */
+
+.form-control, .form-control:focus {
+    border: 0;
+    box-shadow: none;
+    transition: border 500ms ease-out;
+}
+
+.md-form input {
+    border-bottom: 1px solid rgb(235, 66, 66);
+    margin: 10px;
+}
+
+.loginCard {
+    border: 0;
+}
+
+.logincard-header {
+    border-top: 22px solid rgb(235, 66, 66);
+    border-bottom: none;
+    color: rgb(235, 66, 66);
+}
+
+/* custom checkbox */
+
+.custom-control-label:before {
+    background-color: white;
+}
+
+.custom-control-input {
+    box-shadow: none;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: rgb(235, 66, 66);
+    border: none;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='white' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+.custom-checkbox .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+}
+
+.forgotPass a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: rgb(75, 73, 73);
+    transition: color 100ms ease-in;
+}
+
+.forgotPass a:hover {
+    color: rgb(235, 66, 66);
+}
+
+a.btn-social {
+    text-decoration: none;
+    color: rgb(235, 66, 66);
+    background: white;
+    border-radius: 5px;
+    transition: background 200ms ease;
+}
+
+a.btn-social:hover {
+    color: white;
+    background: rgb(235, 66, 66);
+}
+
+/* food details page */
+
+.detailsFoodImage {
+    width: 100%;
+    height: 80vh;
+}
+
+.detailsFoodImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.moneyandtimeInner {
+    padding: 20px;
+}
+
+.similarFromShop {
+    overflow: hidden;
+}
+
+.similarFromshopSlide .card {
+    width: 100%;
+    height: auto;
+}
+
+.similarFromShopImage {
+    width: inherit;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* tab css */
+
+#crTab .nav-link:not(.active) {
+    color: rgb(235, 66, 66);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#crTab .nav-link.active {
+    color: white;
+    background-color: rgb(235, 66, 66);
+}
+
+.commentsCard .avatar {
+    width: 80px;
+    height: 80px;
+}
+
+#comments-pane {
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+}
+
+.comment {
+    background: rgb(235, 66, 66);
+    border-radius: 5px;
+    padding: 20px;
+    color: white;
+}
+
+.commentRow {
+    margin-bottom: 20px;
+}
+
+/* restaurant details */
+
+.detailsShopHeader {
+    width: 100%;
+    height: 80vh;
+    background-image: url('../assets/images/secondSection.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed
+}
+
+.shopHeaderOverlay {
+    background: rgba(241, 79, 79, 0.8);
+    width: 100%;
+    height: 100%;
+}
+
+.shopLogo {
+    width: 200px;
+    height: 200px;
+}
+
+.shopDescription {
+    color: white;
+    font-style: bold;
+}
+
+.shopHeaderInner {
+    width: 100%;
+    height: inherit;
+}
+
+.shopOffer {
+    width: 100%;
+    height: auto;
+}
+
+.shopOfferImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* picker style */
+
+a.dropdown-item.selected.active {
+    background: rgb(235, 66, 66)!important;
+    color: white;
+}
+
+a.dropdown-item.active {
+    background: rgb(235, 66, 66)!important;
+    color: white;
+}
+
+.btn.dropdown-toggle.btn-light {
+    background: rgb(235, 66, 66);
+    color: white;
+    outline: none !important;
+}
+
+.bootstrap-select>.dropdown-toggle.bs-placeholder {
+    color: white !important;
+}
+
+/* offer select boxes section */
+
+.offerSelectBoxes {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.searchFormContainer {
+    padding: 20px;
+}
+
+.searchFormContainer input, .searchButtonDiv, .form-group {
+    padding: 20px;
+}
