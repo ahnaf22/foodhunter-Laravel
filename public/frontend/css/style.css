@@ -292,15 +292,15 @@ button:focus {
 }
 
 .loginSlide1 {
-    background: url("/assets/images/biryani.jpg");
+    background:  url('/frontend/assets/images/bannerImages/dineinInd.jpg');;
 }
 
 .loginSlide2 {
-    background: url("/assets/images/pizza.jpg");
+    background: url("/frontend/assets/images/pizza.jpg");
 }
 
 .loginSlide3 {
-    background: url("/assets/images/masala.jpg");
+    background: url("/frontend/assets/images/masala.jpg");
 }
 
 .loginSlide1, .loginSlide2, .loginSlide3 {

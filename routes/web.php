@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.indexfiles.index');
-});
+Route::get('/', 'PageController@homePage' )->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
