@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PageController@homePage' )->name('home');
+Route::get('/', 'PageController@homePage' )->name('homePage');
 
 Auth::routes();
 

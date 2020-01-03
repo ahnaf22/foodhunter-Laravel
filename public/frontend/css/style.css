@@ -649,3 +649,29 @@ a.dropdown-item.active {
     color: var(--mainColor);
 }
 
+
+/* register panels */
+
+.registerSidePanel{
+    width: 100%;
+    height: 100vh;
+}
+
+.regImageDIv{
+    width: 100%;
+    height: 100%;
+}
+
+.regImageDIv img{
+    width:90%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.registerCard{
+    width: 70%;
+}
+
+.registerWrapper{
+    margin-top: 10vh !important;
+}
