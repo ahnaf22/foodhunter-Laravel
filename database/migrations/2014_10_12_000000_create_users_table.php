@@ -29,7 +29,8 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('is_seller')->nullable()->default('0')->comment('seller:1 | non-seller: 0');
             $table->tinyInteger('is_offerer')->nullable()->default('0')->comment('offerer:1 | non-offerer: 0');
             $table->tinyInteger('is_active')->nullable()->default('0')->comment('active:1 | inactive: 0');
-            $table->tinyInteger('is_verified')->nullable()->default('0')->comment('verified:1 | non-verified: 0');
+            $table->tinyInteger('is_verified_by_admin')->nullable()->default('0')->comment('verified:1 | non-verified: 0');
+            $table->tinyInteger('is_email_verified')->nullable()->default('0')->comment('verified:1 | non-verified: 0');
             $table->tinyInteger('is_admin')->nullable()->default('0')->comment('admin:1 | non-admin: 0');
 
             $table->timestamp('email_verified_at')->nullable();

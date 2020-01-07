@@ -46,6 +46,7 @@
         class="col-lg-6 col-sm-6 col-xs-6 loginPanel d-flex align-items-center justify-content-center"
       >
         <div class="card loginCard">
+          <div style="margin-top: 50%">@include('frontend.partials.messages')</div> 
           <h3 class="card-header logincard-header text-center py-4">
             <strong>Sign in</strong>
           </h3>

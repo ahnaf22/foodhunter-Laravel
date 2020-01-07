@@ -16,3 +16,10 @@ Route::get('/', 'PageController@homePage' )->name('homePage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+// User Routes
+
+Route::get('/token/{token}', 'VerificationController@verify' )->name('user.verification');

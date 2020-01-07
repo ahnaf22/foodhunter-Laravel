@@ -22,7 +22,9 @@ class User extends Authenticatable
         'password',
         'phone',
         'address',
-        'ip_address'
+        'ip_address',
+        'remember_token',
+        'is_email_verified'
     ];
 
     /**

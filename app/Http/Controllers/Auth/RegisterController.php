@@ -7,6 +7,9 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use App\Notifications\VerifyRegistration;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -64,16 +67,24 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function register(Request $request)
     {
-        return User::create([
-            'first_name' => $data['first_name'], 
-            'last_name' => $data['last_name'], 
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'phone' => $data['phone'],
-            'address' => $data['address'],
-            'ip_address' => request()->ip()
+        $this->validator($request->all())->validate();
+        $user = User::create([
+            'first_name' => $request->first_name, 
+            'last_name' => $request->last_name, 
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'ip_address' => request()->ip(),
+            'remember_token' => Str::random(40),
         ]);
+
+        $user->notify(new VerifyRegistration($user));
+        session()->flash('success','A confirmation mail is sent to you, please verify your mail');
+
+        return redirect('login');
     }
+
 }
