@@ -21,5 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // User Routes
-
 Route::get('/token/{token}', 'VerificationController@verify' )->name('user.verification');
+
+
+//admin and user dashboard routes
+Route::get('/admin', 'AdminController@index')->name('admin.index');
