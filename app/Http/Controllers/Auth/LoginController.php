@@ -61,6 +61,9 @@ class LoginController extends Controller
 
                     if(Auth::guard('web')->attempt(['email'=> $request->email,'password'=> $request->password],$request->remember))
                     {
+                        $user = Auth::user();
+                        $user->is_active=1;
+                        $user->save();
                         return redirect()->intended(route('homePage'));
                     } 
                     else{

@@ -108,5 +108,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
+            <div class="text-right text-danger"><a  class="anchortag" href="#">See more</a></div>
         </div>

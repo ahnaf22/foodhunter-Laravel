@@ -24,7 +24,10 @@ class User extends Authenticatable
         'address',
         'ip_address',
         'remember_token',
-        'is_email_verified'
+        'is_email_verified',
+        'is_active',
+        'is_seller',
+        'is_offerer'
     ];
 
     /**

@@ -14,7 +14,7 @@
                             class="btn btn-outline-danger btn-md"
                             type="submit"
                           >
-                            Find Offers
+                          Find foods
                           </button>
 
                     </div>
