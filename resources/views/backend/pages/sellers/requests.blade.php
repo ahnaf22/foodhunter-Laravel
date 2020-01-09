@@ -34,7 +34,7 @@
                                <td><img src="{{ asset('backend/assets/images/shoplogos/'.$user->shop->shop_logo) }}" ></td>
                                <td><img src="{{ asset('backend/assets/images/sellerNid/'.$user->nid) }}" ></td>
                                <td>
-                                   <a href="{{route('admin.category.edit', $user->id)}}" class="btn btn-success">Approve</a>
+                                   <a href="{{route('admin.seller.accept', $user->id)}}" class="btn btn-success">Approve</a>
                                    <a href="#deleteModal{{$user->id}}" data-toggle="modal" class="btn btn-danger">Reject</a>
                                </td>
                                <!-- deletemodal -->
@@ -53,7 +53,7 @@
                                                 
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="{{route('admin.category.delete',$user->id)}}"  method="post">
+                                                <form action="{{route('admin.seller.reject',$user->id)}}"  method="post">
                                                      @csrf
                                                      <button type="sumbit" class="btn btn-danger" >Confirm rejection</button>
                                                 </form>

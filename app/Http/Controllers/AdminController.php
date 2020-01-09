@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\SellerApproval;
 use App\Shop;
 use App\User;
 use Illuminate\Http\Request;
@@ -60,4 +61,56 @@ class AdminController extends Controller
             return redirect('home');
         }
     }
+
+
+    public function approveseller($id)
+    {
+    
+       $user= User::where('id',$id)->first();
+       $user->is_seller= 1;
+       $user->seller_request= 0;
+       $user->is_verified_by_admin=1;
+       $user->save();
+
+       $user->notify(new SellerApproval(1));
+       session()->flash('success','Seller Approved!');
+       return back();
+    }
+
+    public function rejectseller($id)
+    {
+        $shop = Shop::where('user_id',$id)->first();
+        $user = User::find($id);
+
+        // delete the shop and nid Image
+        $shopImagePath= public_path('backend/assets/images/shoplogos/' . $shop->shop_logo);
+        $nidImagePath= public_path('backend/assets/images/sellerNid/' . $user->nid);
+        if(is_file($shopImagePath))
+        {
+           unlink($shopImagePath);
+        }   
+
+        if(is_file($nidImagePath))
+        {
+           unlink($nidImagePath);
+        }
+        
+        //set user nid null
+        $user->nid=NULL;
+        $user->seller_request=0;
+        $user->save();
+
+        //delete shop info
+        $shop->delete();
+
+        //mail user about rejection
+        $user->notify(new SellerApproval(0));
+
+        session()->flash("customerror","Seller request rejected!");
+
+
+
+         return back();
+    }
+
 }

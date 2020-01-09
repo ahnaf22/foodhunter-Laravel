@@ -40,11 +40,14 @@ Route::post('/admin/category/delete/{id}', 'CategoryController@delete')->name('a
 Route::get('/admin/users/index', 'AdminController@allusers')->name('admin.users.index');
 Route::get('/admin/sellers/index', 'AdminController@allsellers')->name('admin.sellers.index');
 Route::get('/admin/sellers/requests', 'AdminController@sellerRequests')->name('admin.sellers.requests');
+Route::get('/admin/sellers/accept/{id}', 'AdminController@approveseller')->name('admin.seller.accept');
+Route::post('/admin/sellers/reject/{id}', 'AdminController@rejectseller')->name('admin.seller.reject');
 
 
 // seller registration route
 Route::get('/seller/registration', 'PageController@sellerRegistration')->name('seller.registration');
 Route::post('/seller/registration/register', 'UserController@registerSeller')->name('seller.registration.register');
+
 
 
 // Food Routes
