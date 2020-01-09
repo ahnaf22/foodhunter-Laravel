@@ -21,7 +21,16 @@ class PageController extends Controller
     {
         if(Auth::check())
         {
-            return view('frontend.sellerReg.sellerReg');
+            $user= Auth::user();
+            if($user->seller_request)
+            {
+                session()->flash("success","You have already applied for seller, please wait for confirmation");
+                return redirect()->route('home');
+            }
+            else{
+                return view('frontend.sellerReg.sellerReg');
+            }
+            
         }
         else{
             return redirect('/');

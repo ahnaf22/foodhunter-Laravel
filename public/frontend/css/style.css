@@ -680,3 +680,8 @@ a.dropdown-item.active {
 .registerWrapper{
     margin-top: 10vh !important;
 }
+
+
+.table td{
+  padding: 0 !important;
+}

@@ -36,6 +36,11 @@ Route::post('/admin/category/create', 'CategoryController@store')->name('admin.c
 Route::post('/admin/category/edit/{id}', 'CategoryController@update')->name('admin.category.update');
 Route::post('/admin/category/delete/{id}', 'CategoryController@delete')->name('admin.category.delete');
 
+// admin users routes
+Route::get('/admin/users/index', 'AdminController@allusers')->name('admin.users.index');
+Route::get('/admin/sellers/index', 'AdminController@allsellers')->name('admin.sellers.index');
+Route::get('/admin/sellers/requests', 'AdminController@sellerRequests')->name('admin.sellers.requests');
+
 
 // seller registration route
 Route::get('/seller/registration', 'PageController@sellerRegistration')->name('seller.registration');

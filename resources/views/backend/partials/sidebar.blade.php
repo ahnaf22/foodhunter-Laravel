@@ -45,11 +45,31 @@
               <div class="collapse" id="ui-users">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Online Users</a>
+                    <a class="nav-link" href="{{route('admin.users.index')}}">All Users</a>
                   </li>
                   
                 </ul>
               </div>
+            </li>
+
+            <!-- manage sellers -->
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-sellers" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Manage sellers</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-sellers">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.sellers.index')}}">All Sellers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.sellers.requests')}}">Seller Requests</a>
+                  </li>       
+                </ul>
+              </div>
+
             </li>
 
             <li class="nav-item">

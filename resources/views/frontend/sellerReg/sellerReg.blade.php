@@ -14,7 +14,7 @@
         <div class="card-body">
             <div>@include('frontend.partials.messages')</div>
             <!-- Form -->
-            <form class="text-center" style="color: #757575;"  method="POST" action="{{ route('seller.registration.register') }}" >
+            <form class="text-center" style="color: #757575;"  method="POST" action="{{ route('seller.registration.register') }}" enctype="multipart/form-data" >
             @csrf  
                
                 <!-- first name -->
