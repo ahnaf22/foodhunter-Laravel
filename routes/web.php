@@ -10,11 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'PageController@homePage' )->name('homePage');
-
 Auth::routes();
 
+Route::get('/', 'PageController@homePage' )->name('homePage');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -65,4 +63,5 @@ Route::post('/seller/registration/register', 'UserController@registerSeller')->n
 
 
 // frontend Food Routes
-Route::get('/foodDetails', 'FoodController@foodDetails')->name('food.details');
+Route::get('/foodDetails/{id}', 'FoodController@foodDetails')->name('food.details');
+Route::get('/homemade', 'FoodController@allHomemade')->name('food.homemade');

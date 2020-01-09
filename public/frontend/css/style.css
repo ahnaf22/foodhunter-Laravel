@@ -685,3 +685,8 @@ a.dropdown-item.active {
 .table td{
   padding: 0 !important;
 }
+
+
+.marginTop{
+    margin-top: 50px !important;
+}

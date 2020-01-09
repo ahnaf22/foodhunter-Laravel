@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Food;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,8 +12,9 @@ class PageController extends Controller
     //
     public function homePage()
     {
+        $homeFoods= Food::all()->random(3);
         $categories = Category::where('parent_id',NULL)->orderBy('name', 'asc')->get();
-        return view('frontend.indexfiles.index',compact('categories'));
+        return view('frontend.indexfiles.index',compact('categories','homeFoods'));
     }
 
 

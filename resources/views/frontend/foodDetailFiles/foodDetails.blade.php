@@ -4,8 +4,8 @@
 @section('content')
 
 <!-- food Image -->
-<div class="detailsFoodImage">
-      <img src="{{asset('frontend/assets/images/biryani.jpg')}}" alt="food Image" />
+<div class="detailsFoodImage mt-4 p-0">
+      <img src="{{asset('backend/assets/images/foods/'.$food->image)}}" alt="food Image" />
 </div>
 
 <!-- food details and similar foods -->

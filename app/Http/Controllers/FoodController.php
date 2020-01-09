@@ -12,9 +12,26 @@ use Illuminate\Support\Str;
 class FoodController extends Controller
 {
     // frontend food details
-    public function foodDetails(){
-        return view('frontend.foodDetailFiles.foodDetails');
+    public function foodDetails($id)
+    {
+
+        $food= Food::find($id);
+        $shopid= $food->shop_id;
+
+        $morefoods= Food::where('shop_id',$shopid)->where('id','!=',$id)->get();
+        //dd($morefoods);
+        return view('frontend.foodDetailFiles.foodDetails',compact('food','morefoods'));
     }
+
+
+    public function allHomemade()
+    {
+        $foods=Food::all();
+        return view('frontend.homeFoodFiles.homemade',compact('foods'));
+    }
+
+
+
 
 
 

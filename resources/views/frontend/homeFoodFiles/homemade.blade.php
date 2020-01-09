@@ -1,9 +1,16 @@
-<div class="homeMadeDiv">
+@extends('frontend.layouts.master')
+
+
+@section('content')
+
+   <div class="container text-center p-4 marginTop bg-white"> <h2>Home Made foods</h2></div>
+   <hr>
+
+   <!-- homemade food Items-->
+   <div class="container-fluid">
             <div class="row bg-white mb-4">
-            
-              @foreach($homeFoods as $food)
-                
-              <div class="col-md-4 mt-2 col-lg-3 col-sm-6 col-xs-12">
+                @foreach($foods as $food)
+                <div class="col-md-4 mt-2 col-lg-4 col-sm-6 col-xs-12">
                 
                     <div class="shopOffer card ">
                         <a href="{{route('food.details',$food->id)}}" class="stretched-link">
@@ -33,8 +40,8 @@
                     </div>
                     
                 </div>
-               @endforeach
-                
+                @endforeach
             </div>
-            <div class="text-right text-danger"><a  class="anchortag" href="{{route('food.homemade')}}">See more</a></div>
-        </div>
+    </div>
+
+@endsection
