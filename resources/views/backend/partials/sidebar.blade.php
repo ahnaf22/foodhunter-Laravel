@@ -8,6 +8,7 @@
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+            <!-- profile -->
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <!-- image for the user -->
@@ -29,6 +30,7 @@
                 </div>
               </a>
             </li>
+
             <li class="nav-item nav-category">Menu</li>
            
             <!-- Admin Links -->
@@ -70,14 +72,38 @@
                 </ul>
               </div>
             </li>
-            @endif
+          
             <!-- end of admin links -->
             
             <!-- seller Links -->
+             @elseif($user->is_seller)
+          
             <!-- end of seller links -->
 
             <!-- offerer links -->
+            @elseif($user->is_offerer)
+            
             <!-- end of offerer links -->
+
+
+            <!-- User Links -->
+            @else
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-userorders" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Manage Order</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-userorders">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Your orders</a>
+                  </li>   
+                </ul>
+              </div>
+            </li>
+            <!-- end of user links -->
+            @endif
            
         </ul>
 </nav>

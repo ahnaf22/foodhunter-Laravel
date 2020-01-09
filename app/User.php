@@ -27,7 +27,9 @@ class User extends Authenticatable
         'is_email_verified',
         'is_active',
         'is_seller',
-        'is_offerer'
+        'is_offerer',
+         'nid',
+         'seller_request'
     ];
 
     /**
@@ -47,4 +49,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function shop()
+    {
+        return $this->hasOne(Shop::class);
+    }
 }

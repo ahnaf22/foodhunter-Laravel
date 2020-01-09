@@ -35,3 +35,12 @@ Route::get('/admin/category/edit/{id}', 'CategoryController@edit')->name('admin.
 Route::post('/admin/category/create', 'CategoryController@store')->name('admin.category.store');
 Route::post('/admin/category/edit/{id}', 'CategoryController@update')->name('admin.category.update');
 Route::post('/admin/category/delete/{id}', 'CategoryController@delete')->name('admin.category.delete');
+
+
+// seller registration route
+Route::get('/seller/registration', 'PageController@sellerRegistration')->name('seller.registration');
+Route::post('/seller/registration/register', 'UserController@registerSeller')->name('seller.registration.register');
+
+
+// Food Routes
+Route::get('/foodDetails', 'FoodController@foodDetails')->name('food.details');

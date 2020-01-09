@@ -454,6 +454,11 @@ a.btn-social:hover {
     overflow: scroll;
 }
 
+/* hide scrollbar of div */
+#comments-pane::-webkit-scrollbar {
+    display: none;
+}
+
 .comment {
     background: rgb(235, 66, 66);
     border-radius: 5px;

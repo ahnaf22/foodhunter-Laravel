@@ -5,7 +5,10 @@
                 <div class="bottomHeader">
                     <h3>What about selling your </h3>
                     <h2>SPECIAL FOOD ITEM ?</h2>
-                    <button class="btn btn-outline-danger btn-md mt-4">
+                    <button  
+                          class="btn btn-outline-danger btn-md mt-4"
+                          onclick="window.location='{{ route('seller.registration') }}'"
+                          >
                             Start Selling!
                     </button>
                 </div>              
