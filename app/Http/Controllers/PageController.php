@@ -27,6 +27,11 @@ class PageController extends Controller
                 session()->flash("success","You have already applied for seller, please wait for confirmation");
                 return redirect()->route('home');
             }
+            elseif($user->is_seller)
+            {
+                session()->flash("success","You are already a seller, start adding foods from dashboard");
+                return redirect()->route('home');
+            }
             else{
                 return view('frontend.sellerReg.sellerReg');
             }

@@ -10,6 +10,7 @@ use Image;
 
 class UserController extends Controller
 {
+    //get registered as seller
     public function registerSeller(Request $request)
     {
         $request->validate([
@@ -74,5 +75,20 @@ class UserController extends Controller
          return redirect()->route('home');
 
 
+    }
+
+    public function userProfile()
+    {
+        if(Auth::user())
+        {
+            $user=Auth::user();
+
+            return view('backend.pages.simpleUserPages.profile',compact('user'));
+        }
+        else{
+            session()->flash('customerror','please login to enter the dashboard');
+            return redirect('login');
+        }
+        
     }
 }

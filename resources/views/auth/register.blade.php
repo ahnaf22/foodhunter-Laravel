@@ -76,7 +76,7 @@
                                        name="email" 
                                        value="{{ old('email') }}" required 
                                        autocomplete="email" autofocus
-                                       placeholder="last name here"
+                                       placeholder="your email here"
                                        >
 
                                 @error('email')

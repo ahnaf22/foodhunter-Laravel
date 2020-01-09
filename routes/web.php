@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // User Routes
 Route::get('/token/{token}', 'VerificationController@verify' )->name('user.verification');
+Route::get('/user/profile', 'UserController@userProfile' )->name('user.profile');
+
 
 
 //admin and user dashboard routes
@@ -44,11 +46,23 @@ Route::get('/admin/sellers/accept/{id}', 'AdminController@approveseller')->name(
 Route::post('/admin/sellers/reject/{id}', 'AdminController@rejectseller')->name('admin.seller.reject');
 
 
+//admin food routes
+Route::get('/admin/food/create', 'FoodController@food_create')->name('admin.food.create');
+Route::get('/admin/food/edit/{id}', 'FoodController@food_edit')->name('admin.food.edit');
+Route::post('/admin/food/create', 'FoodController@food_store')->name('admin.food.store');
+Route::post('/admin/food/edit/{id}', 'FoodController@food_update')->name('admin.food.update');
+Route::post('/admin/food/delete/{id}', 'FoodController@food_delete')->name('admin.food.delete');
+Route::get('/admin/food', 'FoodController@allfoods')->name('admin.food');
+
+
 // seller registration route
 Route::get('/seller/registration', 'PageController@sellerRegistration')->name('seller.registration');
 Route::post('/seller/registration/register', 'UserController@registerSeller')->name('seller.registration.register');
 
 
 
-// Food Routes
+
+
+
+// frontend Food Routes
 Route::get('/foodDetails', 'FoodController@foodDetails')->name('food.details');

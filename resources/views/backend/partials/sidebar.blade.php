@@ -10,7 +10,7 @@
         <ul class="nav">
             <!-- profile -->
             <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
+              <a href="{{route('user.profile')}}" class="nav-link">
                 <!-- image for the user -->
                 <div class="profile-image">
                   <img class="img-md rounded-circle" src="{{asset('backend/assets/images/defaultImages/defaultUser.png')}}" >
@@ -32,6 +32,15 @@
             </li>
 
             <li class="nav-item nav-category">Menu</li>
+
+            <!-- common link -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('user.profile')}}" >
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Profile</span>
+                <i class="menu-arrow"></i>
+              </a>
+            </li>
            
             <!-- Admin Links -->
             @if($user->is_admin)
@@ -97,7 +106,45 @@
             
             <!-- seller Links -->
              @elseif($user->is_seller)
-          
+             <!-- SHOP PROFILE -->
+             <li class="nav-item">
+                <a class="nav-link" href="{{route('user.profile')}}" >
+                  <i class="menu-icon typcn typcn-coffee"></i>
+                  <span class="menu-title">Myshop</span>
+                  <i class="menu-arrow"></i>
+                </a>
+              </li>
+             <!-- add foods -->
+             <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-foods" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Manage Foods</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-foods">
+                <ul class="nav flex-column sub-menu">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.food')}}">All foods</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.food.create')}}">Add food</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
+
+
+
+
+
+
+
+
+
             <!-- end of seller links -->
 
             <!-- offerer links -->
