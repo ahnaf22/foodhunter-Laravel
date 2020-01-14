@@ -690,3 +690,20 @@ a.dropdown-item.active {
 .marginTop{
     margin-top: 50px !important;
 }
+
+/* shop header */
+.shopheaderCard{
+    width: 100%;
+    height: 40vh;
+}
+
+.shopheaderImageBox{
+    width:inherit;
+    height:inherit;
+}
+
+.shopheaderImageBox img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}

@@ -65,3 +65,8 @@ Route::post('/seller/registration/register', 'UserController@registerSeller')->n
 // frontend Food Routes
 Route::get('/foodDetails/{id}', 'FoodController@foodDetails')->name('food.details');
 Route::get('/homemade', 'FoodController@allHomemade')->name('food.homemade');
+
+
+// front end shop routes
+Route::get('/shops', 'ShopController@allShops')->name('shops');
+Route::get('/shops/details/{id}', 'ShopController@shopDetails')->name('shops.details');

@@ -12,7 +12,7 @@ class PageController extends Controller
     //
     public function homePage()
     {
-        $homeFoods= Food::all()->random(3);
+        $homeFoods= Food::all()->take(4);
         $categories = Category::where('parent_id',NULL)->orderBy('name', 'asc')->get();
         return view('frontend.indexfiles.index',compact('categories','homeFoods'));
     }

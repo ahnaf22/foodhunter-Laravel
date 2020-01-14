@@ -17,10 +17,9 @@
               <!-- similar from shop -->
               <div class="similarFromShop">
                 <p>
-                  <strong
-                    >Other offers From
-                    <span class="text-danger">{{$food->shop->name}}</span></strong
-                  >
+                  <strong>Other offers From
+                    <a class="anchortag" href="{{route('shops.details',$food->shop->id)}}"><span class="text-danger">{{$food->shop->name}}</span></a>
+                  </strong>
                 </p>
                 <div class="similarFromShopSlideContainer">
                   <div class="swiper-wrapper">
