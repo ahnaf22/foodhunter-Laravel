@@ -6,6 +6,7 @@
    <div class="container text-center p-4 marginTop bg-white"> <h2>Home Made foods</h2></div>
    <hr>
 
+    <div class="container  p-4">@include('frontend.partials.messages')</div>
    <!-- homemade food Items-->
    <div class="container-fluid">
             <div class="row bg-white mb-4">
@@ -13,7 +14,7 @@
                 <div class="col-md-4 mt-2 col-lg-4 col-sm-6 col-xs-12">
                 
                     <div class="shopOffer card ">
-                        <a href="{{route('food.details',$food->id)}}" class="stretched-link">
+                        <a href="{{route('food.details',$food->id)}}" >
                                 <img
                                     src="{{asset('backend/assets/images/foods/'.$food->image)}}"
                                     class="img-thumbnail shopOfferImage card-img-top"
@@ -35,7 +36,9 @@
                                 class="fas fa-money-bill-wave text-danger mt-2"
                             ></i>
                             <span>{{$food->price}} Taka</span><br />
-    
+                            
+                            @include('frontend.partials.addtobasket')
+            
                         </div>
                     </div>
                     

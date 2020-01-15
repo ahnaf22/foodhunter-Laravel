@@ -5,6 +5,7 @@
     </div>
 </div>
 
+<div class="container  p-4">@include('frontend.partials.messages')</div>
 <!-- main items -->
 <div class="container-fluid">
             <div class="row bg-white mb-4 p-4">
@@ -12,7 +13,7 @@
                 <div class="col-md-4 mt-4 col-lg-4 col-sm-6 col-xs-12">
                 
                     <div class="shopOffer card ">
-                        <a href="{{route('food.details',$food->id)}}" class="stretched-link">
+                        <a href="{{route('food.details',$food->id)}}" >
                                 <img
                                     src="{{asset('backend/assets/images/foods/'.$food->image)}}"
                                     class="img-thumbnail shopOfferImage card-img-top"
@@ -29,7 +30,7 @@
                                 class="fas fa-money-bill-wave text-danger mt-2"
                             ></i>
                             <span>{{$food->price}} Taka</span><br />
-    
+                             @include('frontend.partials.addtobasket')
                         </div>
                     </div>
                     

@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="{{route('homePage')}}">FoodHunter</a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -30,6 +32,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Find offers</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('food.homemade')}}">Homemade foods</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
@@ -44,6 +49,12 @@
                 </li>
                 @endif
                 @else
+                            <li class="nav-item  text-white">
+                                <a class="nav-link btn  btn-danger" style="color:white !important" href="{{ route('basket') }}">
+                                            <span><i class="fas fa-shopping-basket"></i></span>
+                                            <span class="badge bg-white text-danger">{{App\Basket::totalBasket()}}</span>
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->first_name }} <span class="caret"></span>

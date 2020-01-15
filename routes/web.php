@@ -70,3 +70,11 @@ Route::get('/homemade', 'FoodController@allHomemade')->name('food.homemade');
 // front end shop routes
 Route::get('/shops', 'ShopController@allShops')->name('shops');
 Route::get('/shops/details/{id}', 'ShopController@shopDetails')->name('shops.details');
+
+
+// basket/cart routes
+Route::get('/basket', 'BasketController@index')->name('basket');
+Route::post('/basket/store', 'BasketController@store')->name('basket.store');
+Route::post('/basket/update', 'BasketController@update')->name('basket.update');
+Route::post('/basket/delete', 'BasketController@delete')->name('basket.delete');
+

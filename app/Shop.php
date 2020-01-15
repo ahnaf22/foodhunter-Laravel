@@ -25,4 +25,14 @@ class Shop extends Model
         return $this->hasMany(Food::class);
     }
 
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function basket()
+    {
+        return $this->hasMany(Basket::class);
+    }
+
 }

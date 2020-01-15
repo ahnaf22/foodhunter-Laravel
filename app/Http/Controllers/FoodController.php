@@ -26,7 +26,7 @@ class FoodController extends Controller
 
     public function allHomemade()
     {
-        $foods=Food::all();
+        $foods=Food::orderBy('title','asc')->get();
         return view('frontend.homeFoodFiles.homemade',compact('foods'));
     }
 
