@@ -78,3 +78,7 @@ Route::post('/basket/store', 'BasketController@store')->name('basket.store');
 Route::post('/basket/update', 'BasketController@update')->name('basket.update');
 Route::post('/basket/delete', 'BasketController@delete')->name('basket.delete');
 
+
+// checkout routes
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+

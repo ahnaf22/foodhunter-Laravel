@@ -6,9 +6,15 @@
 @php
 
   $onebasket=App\Basket::basketItems()->first();
-  $shopname=$onebasket->shop->name;
+  if(!is_null($onebasket))
+  {
+    $shopname=$onebasket->shop->name;
+  }
 
+  $totalprice=0;
 @endphp
+
+
 
 <div class="marginTop container text-center ">
     <div class="basketHeader text-danger card-header p-4 border-bottom rounded-pill border-danger"><h4><span><i class="fas fa-shopping-basket"></i></span> Food Basket</h4></div>
@@ -19,8 +25,8 @@
 @if(App\Basket::basketItems()->count() == 0)
 <div class="container jumbotron text-center"> <h3>No items in Basket</h3> </div>
 @else
-<div class="container mt-4 card">
-       <h4 class="card-header text-center badge-danger">Shop Name: <a style="text-decoration:none; color:white" href="{{route('shops.details',$onebasket->shop_id)}}">{{$shopname}}</a></h4>
+<h4 class="card-header container text-center badge-danger">Shop Name: <a style="text-decoration:none; color:white" href="{{route('shops.details',$onebasket->shop_id)}}">{{$shopname}}</a></h4>
+<div class="container mt-4 table-responsive">
       <table class="table text-center">
           <thead class="thead-primary">
             <tr>
@@ -56,8 +62,22 @@
                 </form>
               </td>
           </tr>
+          @php
+             $totalprice+=$basket->food->price * $basket->quantity;
+          @endphp
+
           @endforeach
+          <tr>
+            <td colspan="4"></td>
+            <td class="text-right">Total Price: </td>
+            <td> {{$totalprice}} Taka</td>
+          </tr>
       </table>
+
+      <div class="container text-center p-4">
+            <a href="{{route('shops')}}" class="btn btn-danger">Continue Shopping</a>
+            <a href="{{route('checkout')}}" class="btn btn-danger">Checkout</a>
+      </div>
 </div>
 @endif
 
