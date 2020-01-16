@@ -12,8 +12,11 @@
 */
 Auth::routes();
 
+// page routes
 Route::get('/', 'PageController@homePage' )->name('homePage');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/foodsharingmode', 'PageController@learnfoodsharingmode')->name('foodsharing.learn');
+
 
 
 
@@ -58,9 +61,6 @@ Route::get('/admin/shop/orders', 'ShopController@seller_shopOrders')->name('admi
 Route::post('/admin/shop/order/view', 'ShopController@seller_orderView')->name('admin.shop.order.view');
 Route::post('/admin/shop/order/confirm', 'ShopController@seller_orderConfirm')->name('admin.shop.order.confirm');
 Route::post('/admin/shop/order/complete', 'ShopController@seller_orderComplete')->name('admin.shop.order.complete');
-
-
-
 
 
 

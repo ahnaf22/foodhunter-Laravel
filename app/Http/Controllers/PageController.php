@@ -43,4 +43,11 @@ class PageController extends Controller
             return redirect('/');
         }
     }
+
+    // learn about food sharing
+    public function learnfoodsharingmode()
+    {
+        return view('frontend.foodsharing.learn');
+    }
+
 }

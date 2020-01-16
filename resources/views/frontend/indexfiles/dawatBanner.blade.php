@@ -6,9 +6,9 @@
               <h1> <strong><i>FOOD SHARING MODE</i></strong> </h1>
               <h4><strong>for the very first time</strong></h4>
 
-              <button class="btn btn-danger btn-md mt-4">
+              <a href="{{route('foodsharing.learn')}}" class="btn btn-danger btn-md mt-4">
                       LEARN MORE
-              </button>
+              </a>
           </div>
      </div>
   </div>
