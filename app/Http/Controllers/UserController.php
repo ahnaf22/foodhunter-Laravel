@@ -76,7 +76,8 @@ class UserController extends Controller
 
 
     }
-
+   
+    // user profile
     public function userProfile()
     {
         if(Auth::user())

@@ -4,6 +4,7 @@
   if(!is_null($onebasket))
   {
     $shopname=$onebasket->shop->name;
+    $timing=$onebasket->shop->open_time ." to ". $onebasket->shop->close_time; 
     $shopid=$onebasket->shop->id;
   }
 
@@ -31,6 +32,7 @@
             <div class="col-5 p-4">
                   <p >Total Price: <span class="badge badge-danger">{{$totalprice}} taka</span></p>  
                   <p > <i class="fa fa-store"></i> :  <span class="badge badge-danger">{{$shopname}}</span></p>  
+                  <p > <i class="fas fa-business-time"></i> :  <span class="badge badge-danger">{{$timing}}</span></p>  
             </div>
         </div>
    </div>

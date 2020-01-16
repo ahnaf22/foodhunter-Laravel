@@ -28,6 +28,7 @@ class CreateOrdersTable extends Migration
             $table->tinyInteger('is_confirmed')->default(0);
             $table->tinyInteger('is_paid')->default(0);
             $table->tinyInteger('is_completed')->default(0);
+            $table->tinyInteger('is_seenbyseller')->default(0);
             
 
             

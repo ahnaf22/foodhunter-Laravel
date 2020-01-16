@@ -19,6 +19,7 @@ class Order extends Model
         'is_confirmed',
         'is_paid',
         'is_completed',
+        'is_seenbyseller',
     ];
 
     public function basket()

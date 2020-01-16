@@ -52,6 +52,23 @@ Route::post('/admin/food/edit/{id}', 'FoodController@food_update')->name('admin.
 Route::post('/admin/food/delete/{id}', 'FoodController@food_delete')->name('admin.food.delete');
 Route::get('/admin/food', 'FoodController@allfoods')->name('admin.food');
 
+// seller shop routes
+Route::get('/admin/shop/profile', 'ShopController@seller_shopProfile')->name('admin.shop.profile');
+Route::get('/admin/shop/orders', 'ShopController@seller_shopOrders')->name('admin.shop.orders');
+Route::post('/admin/shop/order/view', 'ShopController@seller_orderView')->name('admin.shop.order.view');
+Route::post('/admin/shop/order/confirm', 'ShopController@seller_orderConfirm')->name('admin.shop.order.confirm');
+Route::post('/admin/shop/order/complete', 'ShopController@seller_orderComplete')->name('admin.shop.order.complete');
+
+
+
+
+
+
+// user order management routes
+Route::get('/user/userorders', 'OrderController@user_orders')->name('user.orders');
+Route::post('/order/delete', 'OrderController@delete_orders')->name('order.delete');
+Route::post('/order/view', 'OrderController@view_order')->name('order.view');
+
 
 // seller registration route
 Route::get('/seller/registration', 'PageController@sellerRegistration')->name('seller.registration');
@@ -81,4 +98,5 @@ Route::post('/basket/delete', 'BasketController@delete')->name('basket.delete');
 
 // checkout routes
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::post('/checkout/store', 'CheckoutController@store')->name('checkout.store');
 

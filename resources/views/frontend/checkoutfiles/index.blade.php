@@ -19,8 +19,6 @@
   }
 @endphp
 
-
-
   @include('frontend.checkoutfiles.header')
   @include('frontend.checkoutfiles.orderinfo')
 @endsection

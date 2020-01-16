@@ -21,7 +21,7 @@ class CreateBasketsTable extends Migration
             $table->bigInteger('shop_id')->unsigned();
             $table->unsignedInteger('quantity')->default(1);
 
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
             $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
     

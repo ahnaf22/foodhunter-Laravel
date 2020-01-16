@@ -5,7 +5,7 @@
              <!-- create Seller requests data -->
              <div class="card">
                  <h4 class="card-header">Pending Seller Requests</h4>
-                 <div class="card-body">
+                 <div class="card-body table-responsive">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

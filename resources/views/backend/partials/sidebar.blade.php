@@ -106,14 +106,30 @@
             
             <!-- seller Links -->
              @elseif($user->is_seller)
-             <!-- SHOP PROFILE -->
+             <!-- SHOP management -->
              <li class="nav-item">
-                <a class="nav-link" href="{{route('user.profile')}}" >
-                  <i class="menu-icon typcn typcn-coffee"></i>
-                  <span class="menu-title">Myshop</span>
-                  <i class="menu-arrow"></i>
-                </a>
-              </li>
+              <a class="nav-link" data-toggle="collapse" href="#ui-shop" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Manage shop</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-shop">
+                <ul class="nav flex-column sub-menu">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.shop.profile')}}">Profile</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.shop.orders')}}">orders</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
+
+
              <!-- add foods -->
              <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-foods" aria-expanded="false" aria-controls="ui-basic">
@@ -154,23 +170,25 @@
 
 
             <!-- User Links -->
-            @else
+          
+            
+            <!-- end of user links -->
+            @endif
+
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-userorders" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Manage Order</span>
+                <span class="menu-title">You Ordered</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-userorders">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Your orders</a>
+                    <a class="nav-link" href="{{route('user.orders')}}">Your orders</a>
                   </li>   
                 </ul>
               </div>
             </li>
-            <!-- end of user links -->
-            @endif
            
         </ul>
 </nav>
