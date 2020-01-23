@@ -52,7 +52,7 @@
                             <li class="nav-item  text-white">
                                 <a class="nav-link btn  btn-danger" style="color:white !important" href="{{ route('basket') }}">
                                             <span><i class="fas fa-shopping-basket"></i></span>
-                                            <span class="badge bg-white text-danger">{{App\Basket::totalBasket()}}</span>
+                                            <span class="badge bg-white text-danger" id="totalbasket">{{App\Basket::totalBasket()}}</span>
                                 </a>
                             </li>
                             <li class="nav-item dropdown">

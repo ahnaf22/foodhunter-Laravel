@@ -37,9 +37,10 @@ class BasketController extends Controller
         {
             // check if user is seller
             $usertype=Auth::user()->is_seller;
-            if($usertype)
+            if($usertype==1)
             {
-                $usershop= Auth::user()->shop_id;
+               $usershop= Shop::where('user_id',Auth::id())->first()->id;
+
             }
             else{
                 $usershop=Null;

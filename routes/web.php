@@ -89,6 +89,7 @@ Route::get('/shops', 'ShopController@allShops')->name('shops');
 Route::get('/shops/details/{id}', 'ShopController@shopDetails')->name('shops.details');
 
 
+
 // basket/cart routes
 Route::get('/basket', 'BasketController@index')->name('basket');
 Route::post('/basket/store', 'BasketController@store')->name('basket.store');
@@ -99,4 +100,8 @@ Route::post('/basket/delete', 'BasketController@delete')->name('basket.delete');
 // checkout routes
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
 Route::post('/checkout/store', 'CheckoutController@store')->name('checkout.store');
+
+
+// search routes
+Route::get('/search/shops', 'SearchController@searchShops')->name('search.shops');
 
