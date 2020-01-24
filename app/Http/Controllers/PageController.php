@@ -50,4 +50,13 @@ class PageController extends Controller
         return view('frontend.foodsharing.learn');
     }
 
+    // categorized foods
+    public function foodsofcategory($id)
+    {
+        $foods = Food::where('category_id',$id)->get();
+        $catname = Category::find($id)->name;
+
+        return view('frontend.foodcatshow.catwisefood',compact('foods','catname'));
+    }
+
 }

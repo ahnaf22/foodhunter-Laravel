@@ -8,9 +8,9 @@
                     <div class="form-group border shadow d-flex align-items-center col-6">
                         <input type="text" 
                                class="form-control  text-center form-control-md" 
-                               id="searchShopValue" 
-                               onkeyup="searchShop()"
-                               placeholder="Search shops here">
+                               id="searchFoodValue" 
+                               onkeyup="searchFood()"
+                               placeholder="Search foods here">
                          <i class="fa fa-search text-danger"></i>
                     </div>
                     

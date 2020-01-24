@@ -1,17 +1,9 @@
-@extends('frontend.layouts.master')
+@if(count($foods) < 1)
+    <div class="jumbotron text-danger"><h2>no food found named: {{$search}}</h2></div>
+@else
+ 
 
-
-@section('content')
-
-   <div class="container text-center p-4 marginTop bg-white"> <h2>Home Made foods</h2></div>
-   <hr>
-
-    <div class="container  p-4">@include('frontend.partials.messages')</div>
-    @include('frontend.homeFoodFiles.searchbar')
-   <!-- homemade food Items-->
-   <div class="container-fluid">
-            <div class="row bg-white mb-4" id="foodContainer">
-                @foreach($foods as $food)
+@foreach($foods as $food)
                 <div class="col-md-4 mt-2 col-lg-4 col-sm-6 col-xs-12">
                 
                     <div class="shopOffer card ">
@@ -44,36 +36,6 @@
                     </div>
                     
                 </div>
-                @endforeach
-            </div>
-    </div>
+@endforeach
 
-@endsection
-
-
-@push('custom-scripts')
-<Script>
-
-          function searchFood()
-          {
-
-              var searchValue=$("#searchFoodValue").val();
-              var url= "{{route('search.foods')}}";
-              //alert(searchValue);
-              
-              $.get(url, 
-                { 
-                    search_string: searchValue
-
-                })
-              .done(function( data ) {
-                  
-                  $("#foodContainer").html(data);
-                  
-                  
-              });
-              
-          }
-
-</Script>
-@endpush
+@endif

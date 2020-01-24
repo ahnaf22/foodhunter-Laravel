@@ -10,7 +10,9 @@
             <div class="card text-white categoryCard m-2">
                 
                 <div class="generalimagebox">
-                  <img src="{{asset('backend/assets/images/categoryImages/'.$category->image)}}" class="card-img">
+                    <a href="{{route('foods.category',$category->id)}}" class="stretched-link">
+                        <img src="{{asset('backend/assets/images/categoryImages/'.$category->image)}}" class="card-img">
+                    </a>
                 </div>
                 
                 <div class="card-img-overlay categoryOverlay d-flex flex-column align-items-start">

@@ -104,4 +104,9 @@ Route::post('/checkout/store', 'CheckoutController@store')->name('checkout.store
 
 // search routes
 Route::get('/search/shops', 'SearchController@searchShops')->name('search.shops');
+Route::get('/search/foods', 'SearchController@searchFoods')->name('search.foods');
+
+
+// categorywise food show
+Route::get('/foods/category/{id}', 'PageController@foodsofcategory')->name('foods.category');
 
